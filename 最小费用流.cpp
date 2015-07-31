@@ -19,7 +19,7 @@ int fun(){
 		while(!q.empty){
 			int u = q.front();
 			q.pop();
-			inq[u] = 1;
+			inq[u] = 0;
 			for(int v = 0;v < n;v++){
 				if(cap[u][v] > flow[u][v] &&d[v] > d[u] + cost[u][v]){
 					d[v] = d[u] + cost[u][v];
