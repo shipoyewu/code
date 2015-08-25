@@ -20,3 +20,6 @@ in.txt
 out.txt
 out2.txt
 out1.txt
+*.o
+a.cpp
+*.c
