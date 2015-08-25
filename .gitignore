@@ -23,3 +23,4 @@ out1.txt
 *.o
 a.cpp
 *.c
+2-SAT.cpp
