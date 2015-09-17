@@ -1,0 +1,52 @@
+#include <cstdio>
+#include <iostream>
+
+using namespace std;
+
+int d[805];
+int a[805][805];
+int x[1000005];
+int y[1000005];
+
+int main(){
+    int n;
+    cin >> n;
+    int m = 2*n;
+
+    for(int i = 1;i <= m;i++){
+        for(int j = 1;j < i;j++){
+            scanf("%d",&a[i][j]);
+            x[a[i][j]] = i;
+            y[a[i][j]] = j;
+        }
+    }
+
+    for(int i = 1000000;i >= 1;i--){
+        if(!d[x[i]] && !d[y[i]]){
+            d[x[i]] = y[i];
+            d[y[i]] = x[i];
+        }
+    }
+//  for(int i = 1;i <= m;i++){
+//      int mi = 0;
+//      if(!d[i]){
+//          for(int j = i+1;j <= m;j++){
+//              if(!d[j] && a[j][i] > mi){
+//                  mi = a[j][i];
+//                  d[i] = j; 
+//              }
+//          }
+//          cout << i << mi << endl; 
+//          d[d[i]] = i;
+//      }
+//  }
+//  
+    for(int i = 1;i <= m;i++){
+        if(i!=1){
+            printf(" ");
+        }
+        printf("%d",d[i]);
+    }
+    cout << endl;
+    return 0;
+}
