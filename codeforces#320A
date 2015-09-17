@@ -1,0 +1,19 @@
+#include <cstdio>
+#include <iostream>
+
+
+using namespace std;
+
+int main(){
+    unsigned int n;
+    cin >> n;
+    int  cc = 0;
+    while(n){
+        if(n&1){
+            cc++;
+        }
+        n >>= 1;
+    }
+    cout << cc << endl;
+    return 0;
+}
